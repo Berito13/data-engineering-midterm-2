@@ -1,0 +1,28 @@
+# Project Setup and Execution Commands
+
+## Dependencies Installation
+pip install fastapi uvicorn
+
+## Database Initialization
+sqlite3 weather.db < weather_db.sql
+
+## Docker Commands
+# Build Docker image
+docker build -t weather-api .
+
+# Run Docker container
+docker run -p 8000:8000 weather-api
+
+## API Endpoint Tests
+# Get all weather data
+curl http://localhost:8000/weather
+
+# Get weather for specific city
+curl http://localhost:8000/weather/Tbilisi
+
+## Additional Useful Commands
+# List Docker images
+docker images
+
+# List running containers
+docker ps
