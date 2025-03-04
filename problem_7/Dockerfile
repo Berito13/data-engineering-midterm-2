@@ -1,12 +1,13 @@
-
 FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY requirements.txt /app/
-
+# დაამატეთ საჭირო პაკეტები
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY problem_7.py /app/
+# დააკოპიროთ ყველა ფაილი
+COPY . .
 
-ENTRYPOINT ["python", "problem_7.py"]
+# გამოიყენეთ სრული გზა კონტეინერში
+CMD ["python", "problem_7.py", "data.csv", "final_data.csv"]

@@ -1,0 +1,17 @@
+# Docker პროექტის ბრძანებები
+
+## იმიჯის აგება
+docker build -t csv-processor .
+
+## კონტეინერის გაშვება
+docker run --rm -v $(pwd):/app csv-processor python problem_7.py data.csv final_data.csv
+
+## სხვა სასარგებლო ბრძანებები
+# Docker იმიჯების სია
+docker images
+
+# აქტიური კონტეინერების სია
+docker ps
+
+# იმიჯების წაშლა
+docker rmi csv-processor
